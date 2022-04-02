@@ -11,6 +11,8 @@ class stack:
     def pop(self):
         if len(self.top) != 0:
             return self.top.pop(-1)  # -1 대신에 length of top 에 -1도 가능합니다.
+        else:
+            print("스택이 공백상태 입니다")
 
     def peek(self):
         if len(self.top) != 0:
@@ -26,53 +28,53 @@ class stack:
         return str(self.top)
 
 
-# Astack = stack()
-# for i in range(0, 6):
-#     Astack.push(i)
-#
-# print("push 5 times", Astack.top)
-# print("result of top", Astack.pop())
-# print("after pop ", Astack.top)
-#
-# odd = stack()
-# even = stack()
-#
-# for i in range(100):
-#     if i % 2 == 0:
-#         odd.push(i)
-#     else:
-#         even.push(i)
-# print(odd)
-# print(even)
-#
-# for _ in range(10):
-#     odd.pop()
-#     even.pop()
-#
-# print(odd)
-# print(even)
-#
-#
-# def checkBrackets(statement):
-#     check = stack()
-#     for ch in statement:
-#         if ch in ['(', '{', '[']:
-#             check.push(ch)
-#         elif ch in [')', '}', ']']:
-#             if check.isEmpty():
-#                 return False
-#             else:
-#                 left = check.pop()
-#                 if (ch == ")" and left != "(") or \
-#                         (ch == "}" and left != "{") or \
-#                         (ch == "]" and left != "["):
-#                     return False
-#
-#     return check.isEmpty()
-#
-#
-# statement = input("rhkgy")
-# print(checkBrackets(statement))
+Astack = stack()
+for i in range(0, 6):
+    Astack.push(i)
+
+print("push 5 times", Astack.top)
+print("result of top", Astack.pop())
+print("after pop ", Astack.top)
+
+odd = stack()
+even = stack()
+
+for i in range(100):
+    if i % 2 == 0:
+        odd.push(i)
+    else:
+        even.push(i)
+print(odd)
+print(even)
+
+for _ in range(10):
+    odd.pop()
+    even.pop()
+
+print(odd)
+print(even)
+
+
+def checkBrackets(statement):
+    check = stack()
+    for ch in statement:
+        if ch in ['(', '{', '[']:
+            check.push(ch)
+        elif ch in [')', '}', ']']:
+            if check.isEmpty():
+                return False
+            else:
+                left = check.pop()
+                if (ch == ")" and left != "(") or \
+                        (ch == "}" and left != "{") or \
+                        (ch == "]" and left != "["):
+                    return False
+
+    return check.isEmpty()
+
+
+statement = input("rhkgy")
+print(checkBrackets(statement))
 
 
 def evalPostfix(expr):
@@ -130,7 +132,7 @@ def Infix2Postfix(expr):  # 입력값 리스트
                     s.pop()  # 스택에서 객체를 반환하고 스택에서 삭제하는 메소드
                 else:
                     break
-            s.push(term)  # 연산자가 아니면 객체에 색입
+            output.append(term)  # 연산자가 아니면 객체에 색입
         else:
             output.append(term)
 
@@ -144,5 +146,5 @@ expr = input("중위표기 수식을 공백을 기준으로 입력하세요")
 expr = expr.split()#공백을 기준으로 문자열을 잘라서 리스트 생성후 다시 반환
 postfix = Infix2Postfix(expr)
 print(evalPostfix(postfix))
-#
+
 # print(evalPostfix(POSTFIX))

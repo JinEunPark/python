@@ -63,17 +63,4 @@ class Set:
         return iter(self.Set)
 
 
-set = Set()
-set2 = Set()
 
-
-for i in range(10):
-    set.insert(i)
-
-
-for e in range(5, 15):
-    set2.insert(e)
-
-
-print(set.diffence(set2))
-print(set.inetersect(set2))
