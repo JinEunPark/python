@@ -18,3 +18,10 @@ print("full name is ",full_name)
 #실습4
 inch =int(input("변환할 인치를 입력하세요"))
 print("inch:{} --> cm:{}".format(inch,inch*2.54))
+
+t = 'abc'
+str = str + t[0]
+str = str + t[i]
+str = str + t[2]
+
+1,2,3,5# 번만 제출한다.

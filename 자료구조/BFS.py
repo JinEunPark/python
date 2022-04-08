@@ -1,4 +1,4 @@
-from circleQueue import circleQueue
+from 자료구조.decQueue.circleQueue import circleQueue
 
 map = [['1', '1', '1', '1', '1', '1'],
        ['0', '0', '1', '0', '0', '1'],
