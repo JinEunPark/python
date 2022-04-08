@@ -107,3 +107,5 @@ s.display()
 for i in range(5):
     s.delete(i)
 s.display()
+s.delete(-5)
+s.display()
