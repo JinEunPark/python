@@ -96,6 +96,13 @@ class linkedList:
             else:
                 before.link = before.link.link
 
+    def reverse_print(self, node):
+        if node.link == None:
+            print("None")
+            return
+        self.reverse_print(node.link)
+
+        print(node.data, end=" <-")
 
 
 
@@ -104,10 +111,11 @@ s.display()
 for i in range(10):
     s.insert(i, i * 10)
 s.display()
-s.insert(s.size(),1000)
+s.insert(s.size(), 1000)
 s.display()
 for i in range(5):
     s.delete(i)
 s.display()
 s.delete(-5)
 s.display()
+s.reverse_print(s.head)
