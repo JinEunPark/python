@@ -1,3 +1,4 @@
+import random as random
 class Arraylist:
     def __init__(self):
         self.list = []
@@ -29,9 +30,20 @@ class Arraylist:
 
     def sort(self, bool):
         if bool == True:
-            self.list.sort(reverse=True)
-        elif bool == False:
-            self.list.sort(reverse=False)
+            for i in range(len(self.list)):
+                least = i
+                for e in range(i + 1, len(self.list)):
+                    if self.list[least] > self.list[e]:
+                        least = e
+                self.list[least], self.list[i] = self.list[i], self.list[least]
+            return
+        else:
+            for i in range(len(self.list)):
+                most = i
+                for e in range(i + 1, len(self.list)):
+                    if self.list[most] < self.list[e]:
+                        most = e
+                    self.list[most], self.list[i] = self.list[i], self.list[most]
 
     def merge(self, listA):
         self.list.extend(listA)
@@ -44,7 +56,11 @@ class Arraylist:
 
 
 Arraylist = Arraylist()
-for i in range(100):
-    Arraylist.append(i+1)
+for i in range(10):
+    Arraylist.append(int(random.random()*10))
+
+print(Arraylist)
+
+Arraylist.sort(False)
 
 print(Arraylist)
