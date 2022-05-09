@@ -1,4 +1,4 @@
-from lineEditor import Editor
+from 자료구조.cantakeitanymore.lineEditor import Editor
 
 
 class lineEditor2(Editor):

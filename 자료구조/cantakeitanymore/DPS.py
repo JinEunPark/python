@@ -1,4 +1,4 @@
-import classStack
+from 자료구조.cantakeitanymore import classStack
 
 map = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
        [0, 0, 0, 0, 0, 1, 1, 1, 1, 1],

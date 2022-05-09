@@ -1,4 +1,4 @@
-from Set import Set
+from 자료구조.cantakeitanymore.Set import Set
 
 
 class newSet(Set):
