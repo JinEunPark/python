@@ -49,6 +49,20 @@ def leveorder(node):
             c.enquene(n.left)
             c.enquene(n.right)
 
+def count_node(node):
+    if node is None:
+        return 0
+    else:
+        return 1 + count_node(node.left) + count_node(node.right)
+
+def count_terminalNode(node):
+    if node is None:
+        return 0
+    elif node.left is None and node.right is None:
+        return 1
+    else:
+        return count_terminalNode(node.left) + count_terminalNode(node.right)
+
 
 print("preorder", end=" ")
 preorder(A)
@@ -60,3 +74,6 @@ print("posterorder", end=" ")
 postorder(A)
 print("levelorder ", end=" ")
 leveorder(A)
+print()
+print("number of node in tree", count_node(A))
+print("number of terminal node", count_terminalNode(A))
