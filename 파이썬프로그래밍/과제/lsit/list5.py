@@ -4,3 +4,4 @@ for i in range(10):
 t = tuple(list)
 for i in t:
     print(i)
+
