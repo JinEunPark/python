@@ -53,9 +53,9 @@ class minheap:
                 if last <= self.heap[child]:# 이것도 맥스 큐량 반대이다. 만약에 마지막 노드보다 작은 노드를 발견하면 바로 나간다.
                     break
 
-                    self.heap[parent] = self.heap[child]
-                    parent = child #부모를 같은 계층으로 만든다.
-                    child *= 2#애를 더 아래 계층으로 내린다.
+                self.heap[parent] = self.heap[child]
+                parent = child #부모를 같은 계층으로 만든다.
+                child *= 2#애를 더 아래 계층으로 내린다.
 
             self.heap[parent] = last#마지막에 부모인덱스랑 마지막 요소를 교환하고
             self.heap.pop(-1)#마지막 요소를 날려준다. 이미 위에서 부모 인덱스랑 교환해서 시발 가능하다.
