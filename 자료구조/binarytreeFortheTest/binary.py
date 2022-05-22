@@ -142,7 +142,10 @@ def isCompleteBT(root):
     # If we reach here, then the tree is complete BT
     return True
 
+
 de = 0
+
+
 def getLevel(root, node, depth):
     global de
     if node.data == root.data:
@@ -156,7 +159,6 @@ def getLevel(root, node, depth):
             getLevel(root.right, node, depth + 1)
 
 
-
 print(is_complete_binarytree(a))
 print(is_complete_binarytree(a1))
 print(isCompleteBT(a))
@@ -165,3 +167,28 @@ print(isCompleteBT(c1))
 
 print(getLevel(a, g, 1))
 print(de)
+
+def getdept(node):
+
+    if node is None:
+        return 0
+    lhight = getdept(node.left)
+    rhight = getdept(node.right)
+
+    if lhight > rhight:
+        return lhight+1
+    else:
+        return rhight+1
+
+
+def get_both(node):
+    if node is None:
+        return 0
+    else:
+        rhight = getdept(node.right)
+        lhight = getdept(node.left)
+    return abs(lhight - rhight)
+
+
+
+print(get_both(a8))
