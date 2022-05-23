@@ -190,5 +190,40 @@ def get_both(node):
     return abs(lhight - rhight)
 
 
+def path_length(root):
+    sum_path = 0
+    node = root
+
+    def path(node,call):
+        nonlocal sum_path
+        if node is not None:
+            path(node.right, call +1)
+            sum_path+= call
+            path(node.left,call +1)
+
+    path(root,0)
+    return sum_path
+
+
+def around(node):
+    if node.right is not None and node.left is not None:
+        tmp = node.right
+        node.right = node.left
+        node.left = tmp
+        around(node.left)
+        around(node.right)
+
+
+
+
+
+
+
 
 print(get_both(a8))
+path_length(a)
+print(path_length(a))
+
+print()
+around(a)
+inorder(a)
