@@ -76,5 +76,29 @@ def bfs(graph, start):
             que.enqueue(n)
 
 
+def dfs_cc(graph, color, vertex, visited):#파이선에서도 배열은 레퍼런스가 전해지기 때문에 파라미터로 전달되어질 set의 원본의 값이 변한다.
+    if vertex not in visited:
+        visited.add(vertex)#재귀함수에서도 다른함수에서 호출되어서 추가된 값이 저장된다.
+        color.append(vertex)# 재귀함수에서도 다른함수에서 호출되어서도 값의 변경된 값이 유지가된디.
+        nbr = graph[vertex] - visited# 차집합을 이용해서 이미 방문한 값을 제외시킨다.
+        for i in nbr:
+            dfs_cc(graph, color, i, visited)
+    return color
+
+def find_conneccted_componet(graph):
+    visited = set() #방문을 점검할 집합을 생성함
+    colorlist = [] # 분리된 그래프를 저장할 배열을 생성함
+
+    for vtx in graph: #graph에 들어있는 원소를 차례대로 방문함
+        if vtx not in visited:# 만약 방문한 집합에 들어있지않는 요소가 있다면
+            color = dfs_cc(graph, [], vtx, visited)
+            colorlist.append(color)
+
+    print("그래프 연결성분의 개수:",len(colorlist))
+    print(colorlist)
+
+find_conneccted_componet(graph2)
+
+
 dfs(graph2, 'A')
 
