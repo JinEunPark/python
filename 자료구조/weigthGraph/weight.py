@@ -30,3 +30,13 @@ print(array)
 
 np.savetxt("/Users/bagjin-eun/PycharmProjects/solveP/자료구조/weigthGraph/save.txt",array,fmt="%f",delimiter=',')
 import matplotlib.pyplot as plt
+
+x = ["a", "b" ,"c", "d", "e", "f", "g"]
+y = [1,2,3,4,5,6,7]
+y2 = [24,14,51,24,12,5,0]
+plt.plot(x,y, label='sold')
+plt.plot(x,y2, label='onshalve')
+plt.xlabel('alpabeet')
+plt.ylabel('value')
+plt.legend()
+plt.show()
