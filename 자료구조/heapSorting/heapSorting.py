@@ -30,6 +30,7 @@ def heapify(arr, arrlen, i):
 
 
 def heapSort(list):
+
     length = len(list)
     print("i=", 0, list)
 
